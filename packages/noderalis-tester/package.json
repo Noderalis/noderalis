@@ -1,0 +1,27 @@
+{
+	"name": "@noderalis/tester",
+	"description": "The Noderalis test runner.",
+	"version": "0.1.0-alpha.1",
+	"license": "MIT",
+	"author": {
+		"name": "Grim",
+		"email": "silencegrim@gmail.com",
+		"url": "https://github.com/TheGrimSilence"
+	},
+	"scripts": {
+		"build": "run build:compile \"$(pwd)\"",
+		"prepack": "run build:compile \"$(pwd)\"",
+		"postpack": "rm -rf lib"
+	},
+	"main": "./sources/index.ts",
+	"publishConfig": {
+		"main": "./lib/index.js",
+		"typings": "./lib/index.d.ts"
+	},
+	"files": [
+		"./lib/**/*"
+	],
+	"engines": {
+		"node": ">=14"
+	}
+}

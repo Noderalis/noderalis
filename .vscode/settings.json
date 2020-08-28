@@ -1,0 +1,24 @@
+{
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "npm.packageManager": "yarn",
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.nodePath": ".yarn/sdks",
+  "eslint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+  "cSpell.words": [
+    "iterall",
+    "pottentially",
+    "typegen"
+  ]
+}

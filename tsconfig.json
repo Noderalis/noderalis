@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "react",
+		"downlevelIteration": true,
+		"lib": ["dom", "esnext", "esnext.asynciterable"],
+		"module": "commonjs",
+		"noImplicitReturns": true,
+		"strict": true,
+		"target": "es2018",
+		"declaration": true,
+		"noUnusedLocals": true,
+		"importHelpers": false,
+		"isolatedModules": false,
+		"skipLibCheck": true,
+		"resolveJsonModule": true
+	},
+	"exclude": [
+		"packages/*/lib",
+		"config",
+		"script",
+		"node_modules",
+		"packages/noderalis-cli"
+	]
+}

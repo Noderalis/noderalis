@@ -1,0 +1,9 @@
+{
+  "name": "Noderalis",
+  "description": "A Node.js application framework.",
+  "version": "{{version}}",
+  "license": "MIT",
+  "bin": {
+    "noderalis": "./bin/noderalis.js"
+  }
+}
