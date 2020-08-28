@@ -47,9 +47,9 @@ import {
 	EngramArgDef,
 } from './definitions/args';
 import {
-	InputDefinitionBlock,
 	EngramInputFieldDef,
 	EngramOutputFieldDef,
+	InputDefinitionBlock,
 	OutputDefinitionBlock,
 } from './definitions/definitionBlocks';
 import { EnumTypeConfig } from './definitions/enumType';
@@ -63,14 +63,14 @@ import {
 } from './definitions/extendType';
 import { EngramInputObjectTypeConfig } from './definitions/inputObjectType';
 import {
-	InterfaceDefinitionBlock,
 	EngramInterfaceTypeConfig,
 	EngramInterfaceTypeDef,
+	InterfaceDefinitionBlock,
 } from './definitions/interfaceType';
 import {
-	Implemented,
 	EngramObjectTypeConfig,
 	EngramObjectTypeDef,
+	Implemented,
 	ObjectDefinitionBlock,
 } from './definitions/objectType';
 import {
@@ -102,14 +102,14 @@ import {
 	isEngramUnionTypeDef,
 } from './definitions/wrapping';
 import {
-	GraphQLPossibleInputs,
-	GraphQLPossibleOutputs,
-	MissingType,
 	EngramGraphQLFieldConfig,
 	EngramGraphQLInputObjectTypeConfig,
 	EngramGraphQLInterfaceTypeConfig,
 	EngramGraphQLObjectTypeConfig,
 	EngramGraphQLSchema,
+	GraphQLPossibleInputs,
+	GraphQLPossibleOutputs,
+	MissingType,
 	NonNullConfig,
 	RootTypings,
 } from './definitions/_types';
@@ -126,8 +126,8 @@ import { makeSchemaInternal } from './makeSchema';
 import {
 	composeMiddlewareFns,
 	CreateFieldResolverInfo,
-	MiddlewareFn,
 	EngramPlugin,
+	MiddlewareFn,
 	PluginConfig,
 } from './plugin';
 import { fieldAuthorizePlugin } from './plugins/fieldAuthorizePlugin';
@@ -148,7 +148,6 @@ import {
 	firstDefined,
 	isObject,
 	mapValues,
-	objValues,
 	UNKNOWN_TYPE_SCALAR,
 	validateOnInstallHookResult,
 } from './utils';
