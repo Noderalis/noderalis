@@ -19,7 +19,7 @@
 		"typings": "./lib/index.d.ts"
 	},
 	"files": [
-		"./lib/**/*"
+		"lib"
 	],
 	"engines": {
 		"node": ">=14"
@@ -32,5 +32,25 @@
 	},
 	"devDependencies": {
 		"@types/prettier": "^2"
+	},
+	"foo": {
+		"files": [
+			"lib"
+		]
+	},
+	"": {
+		"files": [
+			"lib"
+		]
+	},
+	"{}": {
+		"files": [
+			"lib"
+		]
+	},
+	"this": {
+		"files": [
+			"lib"
+		]
 	}
 }

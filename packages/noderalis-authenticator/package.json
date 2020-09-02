@@ -19,7 +19,7 @@
 		"typings": "./lib/index.d.ts"
 	},
 	"files": [
-		"./lib/**/*"
+		"lib"
 	],
 	"engines": {
 		"node": ">=14"
@@ -27,5 +27,25 @@
 	"dependencies": {
 		"firebase": "^7.17.1",
 		"firebase-admin": "^9.0.0"
+	},
+	"foo": {
+		"files": [
+			"lib"
+		]
+	},
+	"": {
+		"files": [
+			"lib"
+		]
+	},
+	"{}": {
+		"files": [
+			"lib"
+		]
+	},
+	"this": {
+		"files": [
+			"lib"
+		]
 	}
 }

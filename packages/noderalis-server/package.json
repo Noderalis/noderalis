@@ -19,12 +19,32 @@
 		"typings": "./lib/index.d.ts"
 	},
 	"files": [
-		"./lib/**/*"
+		"lib"
 	],
 	"engines": {
 		"node": ">=14"
 	},
 	"dependencies": {
 		"fastify": "^3.1.1"
+	},
+	"foo": {
+		"files": [
+			"lib"
+		]
+	},
+	"": {
+		"files": [
+			"lib"
+		]
+	},
+	"{}": {
+		"files": [
+			"lib"
+		]
+	},
+	"this": {
+		"files": [
+			"lib"
+		]
 	}
 }
