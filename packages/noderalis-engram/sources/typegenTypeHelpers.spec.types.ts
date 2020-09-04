@@ -5,7 +5,7 @@ import { MaybePromiseDeep } from './typegenTypeHelpers';
  * MaybePromiseDeep
  */
 
-// A case found by Sytten https://github.com/graphql-engram/schema/issues/470
+// A case found by Sytten https://github.com/graphql-schema/schema/issues/470
 // The presence of .then was leading to type errors
 type Ones = 1[];
 type GraphQLResponse = Ones | null;

@@ -1,4 +1,5 @@
-import { FieldOutConfig, OutputDefinitionBlock } from '../core';
+import { OutputDefinitionBlock } from '../blocks';
+import { FieldOutConfig } from './definitionBlocks';
 import { extendType, EngramExtendTypeDef } from './extendType';
 
 export type QueryFieldConfig<FieldName extends string> =

@@ -1,6 +1,6 @@
 import { GraphQLField } from 'graphql';
-import { ArgsValue, GetGen, RootValue } from '../core';
 import { plugin } from '../plugin';
+import { ArgsValue, GetGen, RootValue } from '../typegenTypeHelpers';
 import { printedGenTyping, printedGenTypingImport } from '../utils';
 
 const QueryComplexityImport = printedGenTypingImport({
@@ -73,7 +73,7 @@ export const queryComplexityPlugin = () => {
 				);
 				return;
 			}
-			// Mutate the field config's extensions property with new complexity field.
+			// Mutate the field configs extensions property with new complexity field.
 			// graphql-query-complexity will look for this property to estimate complexity
 			config.fieldConfig.extensions = {
 				...config.fieldConfig.extensions,

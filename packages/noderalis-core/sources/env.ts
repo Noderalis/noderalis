@@ -7,6 +7,6 @@ export const env = {
   isProduction: process.env.BUILD_ENV == 'production',
 };
 
-export const notImpl = Chalk`Not Yet Implemented. Expected by {cyan v1.0.0}`;
+export const notImpl = Chalk`Not Yet Implemented. Expected by {cyan v1.0.0}\n`;
 
 export const identity = <T>(value: T): T => value;

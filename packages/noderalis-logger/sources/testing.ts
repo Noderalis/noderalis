@@ -47,7 +47,7 @@ logger.add(
 	})
 );
 
-logger.log({ level: 'emerg', message: 'Logger instantiated!' });
+logger.log({ level: 'emergency', message: 'Logger instantiated!' });
 logger.log({ level: 'warning', message: 'Logger instantiated!' });
 logger.log('notice', 'Silly log');
 logger.error('Holy shit batman!');

@@ -199,13 +199,13 @@ export type ConnectionFieldConfig<
 	validateArgs?: (args: Record<string, any>, info: GraphQLResolveInfo) => void;
 	/**
 	 * Dynamically adds additional fields to the current "connection" when it is defined.
-	 * This will cause the resulting type to be prefix'ed with the name of the type/field it is branched off of,
+	 * This will cause the resulting type to be prefixed with the name of the type/field it is branched off of,
 	 * so as not to conflict with any non-extended connections.
 	 */
 	extendConnection?: (def: ObjectDefinitionBlock<any>) => void;
 	/**
 	 * Dynamically adds additional fields to the connection "edge" when it is defined.
-	 * This will cause the resulting type to be prefix'ed with the name of the type/field it is branched off of,
+	 * This will cause the resulting type to be prefixed with the name of the type/field it is branched off of,
 	 * so as not to conflict with any non-extended connections.
 	 */
 	extendEdge?: (def: ObjectDefinitionBlock<any>) => void;
@@ -689,7 +689,7 @@ export function makeResolveFn(
 			nodes: any[];
 		}>;
 
-		// Get all the nodes, before any pagination sliciing
+		// Get all the nodes, before any pagination slicing
 		const resolveAllNodes = () => {
 			if (cachedNodes !== undefined) {
 				return cachedNodes;
@@ -764,7 +764,7 @@ export function makeResolveFn(
 
 				return {
 					nodes: resolvedNodeList,
-					// todo find typesafe way of doing this
+					// todo find type-safe way of doing this
 					edges: resolvedEdgeList as EdgeLike[],
 				};
 			});

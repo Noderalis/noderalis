@@ -6,8 +6,6 @@ FirebaseAdmin.initializeApp({
 	databaseURL: 'https://noderalis.firebaseio.com',
 });
 
-let record = null;
-
 FirebaseAdmin.auth()
 	.createUser({
 		email: 'silencegrim@gmail.com',
@@ -18,7 +16,6 @@ FirebaseAdmin.auth()
 	})
 	.then((userRecord) => {
 		console.log(userRecord);
-		record = userRecord;
 		process.exit();
 	})
 	.catch((err) => {

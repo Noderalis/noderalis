@@ -28,9 +28,9 @@ export const reportLimitStats = (): void => {
  * Lists the repositories under the given `org`
  *
  * @param org The GitHub Organization of interest.
- * @param topics If passed, we look for repos with only these topics.
+ * @param topics If passed, we look for repositories with only these topics.
  */
-export const listOrgRepos = (org: string, topics?: string[]): void => {
+export const listOrgRepositories = (org: string, topics?: string[]): void => {
   octokit.repos
     .listForOrg({
       org,
@@ -51,7 +51,7 @@ export const listOrgRepos = (org: string, topics?: string[]): void => {
     });
 };
 
-/** generateRepoFromTemplate(_, reaxpress, new-repo)*/
+/** generateRepoFromTemplate(_, express, new-repo)*/
 export const generateRepoFromTemplate = (
   templateRepoName: string,
   newRepoOwner: string,

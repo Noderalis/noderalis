@@ -1,4 +1,4 @@
-import { Command } from 'clipanion';
+import { Command, Usage } from 'clipanion';
 import { notImpl } from '@noderalis/core/sources';
 import { BaseCommand } from '../tools/BaseCommand';
 
@@ -6,11 +6,20 @@ import { BaseCommand } from '../tools/BaseCommand';
  * Will eventually start a development server.
  */
 export class StartCommand extends BaseCommand {
-  @Command.Path('start')
-  async execute(): Promise<void> {
-    this.stdout(this.context.cwd);
-    this.stdout(notImpl);
-  }
+	static usage: Usage = Command.Usage({
+		description: `a simple description`,
+		details: `some details`,
+		examples: [
+			[`example1`, `$0`],
+			[`example2`, `$0`],
+		],
+	});
+
+	@Command.Path('start')
+	async execute(): Promise<void> {
+		this.stdout(this.context.cwd + '\n');
+		this.stdout(notImpl);
+	}
 }
 
 export default StartCommand;

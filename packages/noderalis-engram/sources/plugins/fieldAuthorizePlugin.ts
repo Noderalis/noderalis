@@ -8,7 +8,7 @@ import {
 } from '../typegenTypeHelpers';
 import { printedGenTyping, printedGenTypingImport } from '../utils';
 
-const FieldauthorizeResolverImport = printedGenTypingImport({
+const FieldAuthorizeResolverImport = printedGenTypingImport({
 	module: '@engram/schema/dist/plugins/fieldAuthorizePlugin',
 	bindings: ['FieldAuthorizeResolver'],
 });
@@ -25,7 +25,7 @@ const fieldDefTypes = printedGenTyping({
     resolver from executing.
   `,
 	type: 'FieldAuthorizeResolver<TypeName, FieldName>',
-	imports: [FieldauthorizeResolverImport],
+	imports: [FieldAuthorizeResolverImport],
 });
 
 export type FieldAuthorizeResolver<

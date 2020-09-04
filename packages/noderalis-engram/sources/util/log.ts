@@ -1,4 +1,3 @@
-import Chalk from 'chalk';
 import { appendFileSync } from 'fs';
 import { resolve } from 'path';
 import { inspect } from 'util';

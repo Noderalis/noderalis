@@ -112,7 +112,7 @@ export interface PluginConfig {
 	onMissingType?: (missingTypeName: string, builder: PluginBuilderLens) => any;
 	/**
 	 * Executed any time a field resolver is created. Returning a function here will add its in the
-	 * stack of middlewares with the (root, args, ctx, info, next) signature, where the `next` is the
+	 * stack of middleware with the (root, args, ctx, info, next) signature, where the `next` is the
 	 * next middleware or resolver to be executed.
 	 */
 	onCreateFieldResolver?: (
@@ -120,7 +120,7 @@ export interface PluginConfig {
 	) => MiddlewareFn | undefined;
 	/**
 	 * Executed any time a "subscribe" handler is created. Returning a function here will add its in the
-	 * stack of middlewares with the (root, args, ctx, info, next) signature, where the `next` is the
+	 * stack of middleware with the (root, args, ctx, info, next) signature, where the `next` is the
 	 * next middleware or resolver to be executed.
 	 */
 	onCreateFieldSubscribe?: (
@@ -128,7 +128,7 @@ export interface PluginConfig {
 	) => MiddlewareFn | undefined;
 	/**
 	 * Executed when a field is going to be printed to the engram "generated types". Gives
-	 * an opportunity to override the standard behavior for printing our inferrred type info
+	 * an opportunity to override the standard behavior for printing our inferred type info
 	 */
 	// onPrint?: (visitor: Visitor<ASTKindToNode>) => void;
 }
@@ -160,7 +160,7 @@ export type MiddlewareFn = (
 ) => any;
 
 /**
- * Takes a list of middlewares and executes them sequentially, passing the
+ * Takes a list of middleware and executes them sequentially, passing the
  * "next" member of the chain to execute as the 5th arg.
  *
  * @param middleware
@@ -200,7 +200,7 @@ withEngramSymbol(EngramPlugin, EngramTypes.Plugin);
  * the type or the plugin. The config from each of these will be
  * passed in during schema construction time, and used to augment the field as necessary.
  *
- * You can either return a function, with the new defintion of a resolver implementation,
+ * You can either return a function, with the new definition of a resolver implementation,
  * or you can return an "enter" / "leave" pairing which will wrap the pre-execution of the
  * resolver and the "result" of the resolver, respectively.
  */

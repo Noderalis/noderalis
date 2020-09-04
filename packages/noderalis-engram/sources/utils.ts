@@ -375,29 +375,29 @@ export function log(msg: string) {
 
 /**
  * Calculate the venn diagram between two iterables based on reference equality
- * checks. The returned tripple contains items thusly:
+ * checks. The returned triple contains items thusly:
  *
- *    * items only in arg 1 --> first tripple slot
- *    * items in args 1 & 2 --> second tripple slot
- *    * items only in arg 2 --> third tripple slot
+ *    * items only in arg 1 --> first triple slot
+ *    * items in args 1 & 2 --> second triple slot
+ *    * items only in arg 2 --> third triple slot
  */
 export function venn<T>(
 	xs: Iterable<T>,
 	ys: Iterable<T>
 ): [Set<T>, Set<T>, Set<T>] {
 	const lefts: Set<T> = new Set(xs);
-	const boths: Set<T> = new Set();
+	const both: Set<T> = new Set();
 	const rights: Set<T> = new Set(ys);
 
 	lefts.forEach((l) => {
 		if (rights.has(l)) {
-			boths.add(l);
+			both.add(l);
 			lefts.delete(l);
 			rights.delete(l);
 		}
 	});
 
-	return [lefts, boths, rights];
+	return [lefts, both, rights];
 }
 
 /**
@@ -420,7 +420,7 @@ export const UNKNOWN_TYPE_SCALAR = decorateType(
 		name: 'ENGRAM__UNKNOWN__TYPE',
 		description: `
     This scalar should never make it into production. It is used as a placeholder for situations
-    where GraphQL Engram encounters a missing type. We don't want to error immedately, otherwise
+    where GraphQL Engram encounters a missing type. We don't want to error immediately, otherwise
     the TypeScript definitions will not be updated.
   `,
 		parseValue(value) {

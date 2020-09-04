@@ -1,4 +1,4 @@
-import { FieldOutConfig, OutputDefinitionBlock } from '../core';
+import { FieldOutConfig, OutputDefinitionBlock } from './definitionBlocks';
 import { extendType, EngramExtendTypeDef } from './extendType';
 
 export type MutationFieldConfig<FieldName extends string> =

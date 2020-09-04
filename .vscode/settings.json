@@ -20,5 +20,6 @@
     "iterall",
     "pottentially",
     "typegen"
-  ]
+  ],
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true
 }

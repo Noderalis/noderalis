@@ -196,7 +196,7 @@ export class OutputDefinitionBlock<TypeName extends string> {
 	) {
 		// FIXME
 		// 1. FieldOutConfig<TypeName is constrained to any string subtype
-		// 2. EngramOutputFieldDef is contrained to be be a string
+		// 2. EngramOutputFieldDef is constrained to be be a string
 		// 3. so `name` is not compatible
 		// 4. and changing FieldOutConfig to FieldOutConfig<string breaks types in other places
 		const field: any = { name, ...fieldConfig };

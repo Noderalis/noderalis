@@ -7,7 +7,6 @@
 		"forceConsistentCasingInFileNames": true,
 		"jsx": "react",
 		"downlevelIteration": true,
-		"lib": ["dom", "esnext", "esnext.asynciterable"],
 		"module": "commonjs",
 		"noImplicitReturns": true,
 		"strict": true,
@@ -20,10 +19,8 @@
 		"resolveJsonModule": true
 	},
 	"exclude": [
-		"packages/*/lib",
+		"packages/**/lib",
 		"config",
-		"script",
-		"node_modules",
-		"packages/noderalis-cli"
+		"script"
 	]
 }
