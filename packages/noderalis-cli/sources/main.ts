@@ -1,5 +1,5 @@
-import { Configuration, PluginConfiguration } from '@noderalis/core';
-import { CommandContext } from '@noderalis/core/sources/Plugin';
+import { Configuration, NoderalisPluginConfiguration } from '@noderalis/core';
+import { CommandContext } from '@noderalis/core/sources/NoderalisPlugin';
 import { Cli } from 'clipanion';
 import commands from './commands/commands';
 export { BaseCommand } from './tools/BaseCommand';
@@ -14,7 +14,7 @@ async function registerCommands(cli: Cli<CommandContext>) {
 	}
 }
 
-export async function main(pluginConfiguration: PluginConfiguration) {
+export async function main(pluginConfiguration: NoderalisPluginConfiguration) {
 	async function run(): Promise<void> {
 		const cli = new Cli<CommandContext>({
 			binaryLabel: 'Noderalis',

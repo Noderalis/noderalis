@@ -1,8 +1,8 @@
 import pkg from '@noderalis/cli/package.json';
-import { PluginConfiguration } from '@noderalis/core';
+import { NoderalisPluginConfiguration } from '@noderalis/core';
 import { getDynamicLibs } from './getDynamicLibs';
 
-export function getPluginConfiguration(): PluginConfiguration {
+export function getPluginConfiguration(): NoderalisPluginConfiguration {
 	const plugins = new Set<string>();
 	for (const dependencyName of pkg[`@noderalis/builder`].bundles.standard)
 		plugins.add(dependencyName);

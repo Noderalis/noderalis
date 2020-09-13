@@ -9,6 +9,7 @@
 		"downlevelIteration": true,
 		"module": "commonjs",
 		"noImplicitReturns": true,
+		"noImplicitAny": false,
 		"strict": true,
 		"target": "es2018",
 		"declaration": true,
@@ -18,9 +19,5 @@
 		"skipLibCheck": true,
 		"resolveJsonModule": true
 	},
-	"exclude": [
-		"packages/**/lib",
-		"config",
-		"script"
-	]
+	"exclude": ["packages/**/lib", "config", "script"]
 }

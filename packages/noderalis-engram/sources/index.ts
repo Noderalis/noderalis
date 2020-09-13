@@ -1,4 +1,3 @@
-// All of the Public API definitions
 export { makeSchema } from './makeSchema';
 export {
 	arg,

@@ -1,10 +1,10 @@
 import { CommandClass } from 'clipanion';
 import { Readable, Writable } from 'stream';
-import { PluginConfiguration, Settings } from './Configuration';
+import { NoderalisPluginConfiguration, Settings } from './Configuration';
 
 export interface CommandContext {
   cwd: string;
-  plugins: PluginConfiguration;
+  plugins: NoderalisPluginConfiguration;
 	quiet: boolean;
 	stdin: Readable;
 	stdout: Writable;
@@ -14,7 +14,7 @@ export interface CommandContext {
 /**
  * Lifecycle hooks fired on specific events.
  */
-export type Hooks = {
+export type NoderalisHooks = {
 
 }
 
@@ -22,8 +22,8 @@ export type Hooks = {
  * A plugin configuration.
  * We don't expect much right now, so it's definitely minimal.
  */
-export type Plugin<PluginHooks = any> = {
+export type NoderalisPlugin<NoderalisPluginHooks = any> = {
 	configuration?: { [key: string]: Settings };
 	commands?: Array<CommandClass<CommandContext>>;
-	hooks?: PluginHooks;
+	hooks?: NoderalisPluginHooks;
 };

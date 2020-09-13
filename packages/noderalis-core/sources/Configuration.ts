@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'fs';
 import { dirname, isAbsolute, join, normalize, resolve } from 'path';
 import { prettifySyncErrors, replaceEnvVariables } from './miscUtils';
 import { builtinModules, dynamicRequire } from './nodeUtils';
-import { Plugin } from './Plugin';
+import { NoderalisPlugin } from './NoderalisPlugin';
 import { parseYml } from './yml';
 
 const IGNORED_ENV_VARIABLES = new Set([
@@ -63,7 +63,7 @@ type SettingsNoDefault =
 
 export type Settings = MapSettings | ShapeSettings | SimpleSettings;
 
-export type PluginConfiguration = {
+export type NoderalisPluginConfiguration = {
 	modules: Map<string, any>;
 	plugins: Set<string>;
 };
@@ -415,7 +415,7 @@ export class Configuration {
 	 */
 	public static async find(
 		startingCwd: string,
-		pluginConfiguration: PluginConfiguration | null,
+		pluginConfiguration: NoderalisPluginConfiguration | null,
 		{ lookup = ProjectLookup.NODERALIS, strict = true } = {}
 	) {
 		console.log(strict);
@@ -463,7 +463,7 @@ export class Configuration {
 
 		configuration.importSettings(excludeCoreFields(coreDefinitions));
 
-		const plugins = new Map<string, Plugin>();
+		const plugins = new Map<string, NoderalisPlugin>();
 
 		const interop = (obj: any) => (obj.__esModule ? obj.default : obj);
 
@@ -555,7 +555,7 @@ export class Configuration {
 	}
 
 	public projectCwd: string | null = null;
-	public plugins: Map<string, Plugin> = new Map();
+	public plugins: Map<string, NoderalisPlugin> = new Map();
 	public settings: Map<string, Settings> = new Map();
 	public values: Map<string, any> = new Map();
 	public sources: Map<string, string> = new Map();
@@ -563,7 +563,7 @@ export class Configuration {
 
 	private constructor(protected startingCwd: string) {}
 
-	private activatePlugin(name: string, plugin: Plugin) {
+	private activatePlugin(name: string, plugin: NoderalisPlugin) {
 		this.plugins.set(name, plugin);
 
 		if (typeof plugin.configuration !== `undefined`) {

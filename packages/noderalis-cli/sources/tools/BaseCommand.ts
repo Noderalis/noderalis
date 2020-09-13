@@ -1,4 +1,4 @@
-import { CommandContext } from '@noderalis/core/sources/Plugin';
+import { CommandContext } from '@noderalis/core/sources/NoderalisPlugin';
 import { Command } from 'clipanion';
 
 export abstract class BaseCommand extends Command<CommandContext> {

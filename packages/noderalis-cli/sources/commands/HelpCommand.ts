@@ -1,4 +1,4 @@
-import { CommandContext } from '@noderalis/core/sources/Plugin';
+import { CommandContext } from '@noderalis/core/sources/NoderalisPlugin';
 import { Command, Usage } from 'clipanion';
 
 export default class HelpCommand extends Command<CommandContext> {

@@ -1,4 +1,4 @@
-import { CommandContext } from '@noderalis/core/sources/Plugin';
+import { CommandContext } from '@noderalis/core/sources/NoderalisPlugin';
 import { CommandClass } from 'clipanion';
 import { GenerateCommand } from './GenerateCommand';
 // import { LintCommand } from './LintCommand';
