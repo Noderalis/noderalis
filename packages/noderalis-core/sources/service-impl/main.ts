@@ -1,5 +1,6 @@
-import { ServicesAccessor } from './instantiation';
+import { IInstantiationService, ServicesAccessor } from './instantiation';
 import { InstantiationService } from './instantiationService';
+import { CodeApplication } from './app';
 
 export class ServiceCollection {
 	private _entries = new Map();
@@ -36,31 +37,31 @@ class ServiceTestMain {
 
 		try {
 			// Init primary services
-			await instantiationService.invokeFunction(async accessor=>{
+			await instantiationService.invokeFunction(async (accessor) => {
 				try {
-					await this.initServices()
-				}catch(error) {
-					throw error
+					await this.initServices();
+				} catch (error) {
+					throw error;
 				}
-			})
+			});
 
 			// Startup
-			await instantiationService.invokeFunction(async accessor=>{
-				return instantiationService.createInstance()
-			})
+			await instantiationService.invokeFunction(async (accessor) => {
+				return instantiationService.createInstance(CodeApplication).startup();
+			});
 		} catch (error) {
 			instantiationService.invokeFunction(this.quit, error);
 		}
 	}
 
-	private createServices() {
+	private createServices(): [IInstantiationService] {
 		const services = new ServiceCollection();
 
 		return [new InstantiationService(services)];
 	}
 
-	private initServices(){
-		return Promise.all([])
+	private initServices() {
+		return Promise.all([]);
 	}
 
 	private quit(accessor: ServicesAccessor, reason?: Error) {
@@ -70,6 +71,8 @@ class ServiceTestMain {
 			exitCode = 1;
 			console.log(reason);
 		}
+
+		process.exitCode = exitCode;
 	}
 }
 

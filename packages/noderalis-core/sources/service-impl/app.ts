@@ -1,6 +1,7 @@
 import { IInstantiationService } from './instantiation';
 import { Disposable } from './lifecycle';
-import { ServiceCollection } from './ServiceTest';
+import { ServiceCollection } from './main';
+import express from 'express';
 
 export class CodeApplication extends Disposable {
 	constructor(
@@ -8,9 +9,9 @@ export class CodeApplication extends Disposable {
 		private readonly instantiationService: IInstantiationService
 	) {
 		super();
-  }
-  
-  async startup(): Promise<void> {
+	}
+
+	async startup(): Promise<void> {
 		// this.logService.debug('Starting VS Code');
 		// this.logService.debug(`from: ${this.environmentService.appRoot}`);
 		// this.logService.debug('args:', this.environmentService.args);
@@ -34,7 +35,13 @@ export class CodeApplication extends Disposable {
 		// });
 
 		// Services
-		// const appInstantiationService = await this.createServices(machineId, sharedProcess, sharedProcessReady);
+		const appInstantiationService = await this.createServices();
+		appInstantiationService;
+
+		const app = express();
+		app.get(`/`, (req, res) => {
+			res.send('Hello, World!');
+		});
 
 		// Create driver
 		// if (this.environmentService.driverHandle) {
@@ -52,25 +59,26 @@ export class CodeApplication extends Disposable {
 
 		// Post Open Windows Tasks
 		// appInstantiationService.invokeFunction(accessor => this.afterWindowOpen(accessor));
+		console.log(`Starting Server!`);
+		app.listen(4200);
+	}
 
-  }
-  
-  private async createServices(){
-    const service = new ServiceCollection()
+	private async createServices() {
+		const services = new ServiceCollection();
 
-    // SWITCH platform
-    // Set the appropriate `IUpdateService`s i.e.: 
-    // 'win32' services.set(IUpdateService, Win32UpdateService), 
-    // 'linux' SnapUpdateService or LinuxUpdateService
-    // 'darwin' DarwinUpdateService
+		// SWITCH platform
+		// Set the appropriate `IUpdateService`s i.e.:
+		// 'win32' services.set(IUpdateService, Win32UpdateService),
+		// 'linux' SnapUpdateService or LinuxUpdateService
+		// 'darwin' DarwinUpdateService
 
-    // ^^ Useful for figuring out something for Noderalis
+		// ^^ Useful for figuring out something for Noderalis
 
-    // service.set() WindowsMainService
-    // service.set() DialoogMainService
-    // etc...
+		// service.set() WindowsMainService
+		// service.set() DialoogMainService
+		// etc...
 
-    // tada finally set the services as a child of the CodeApplication... I think.
-    // return this.instantiationService.createChild(services)
-  }
+		// tada finally set the services as a child of the CodeApplication... I think.
+		return this.instantiationService.createChild(services);
+	}
 }
