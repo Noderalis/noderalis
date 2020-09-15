@@ -346,7 +346,7 @@ export class Configuration {
 		let noderalisFiles: { path: string; cwd: string; data: any }[] = [];
 
 		let nextCwd = startingCwd;
-		let currentCwd = null;
+		let currentCwd: string | null = null;
 
 		while (nextCwd !== currentCwd) {
 			currentCwd = nextCwd;
@@ -387,9 +387,9 @@ export class Configuration {
 		startingCwd: string,
 		noderalisFile: string | null
 	) {
-		let projectCwd = null;
+		let projectCwd: string | null = null;
 		let nextCwd = startingCwd;
-		let currentCwd = null;
+		let currentCwd: string | null = null;
 
 		while (nextCwd !== currentCwd) {
 			currentCwd = nextCwd;
