@@ -194,7 +194,7 @@ export class TypegenPrinter {
 		});
 		eachObj(this.printImports, (val, key) => {
 			const { default: def, ...rest } = val;
-			const idents = [];
+			const idents: (string | boolean)[] = [];
 			if (def) {
 				idents.push(def);
 			}
@@ -610,7 +610,7 @@ export class TypegenPrinter {
 	}
 
 	typeToArr(type: GraphQLOutputType): any[] {
-		const typing = [];
+		const typing: any[] = [];
 		if (isNonNullType(type)) {
 			type = type.ofType;
 		} else {
@@ -675,7 +675,7 @@ export class TypegenPrinter {
 	}
 
 	argTypeArr(arg: GraphQLInputType): any[] {
-		const typing = [];
+		const typing: any[] = [];
 		if (isNonNullType(arg)) {
 			arg = arg.ofType;
 		} else {

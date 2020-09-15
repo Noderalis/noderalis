@@ -311,7 +311,7 @@ export function unwrapType(
 ): { type: GraphQLNamedType; isNonNull: boolean; list: boolean[] } {
 	let finalType = type;
 	let isNonNull = false;
-	const list = [];
+	const list: boolean[] = [];
 	while (isWrappingType(finalType)) {
 		while (isListType(finalType)) {
 			finalType = finalType.ofType;
@@ -441,7 +441,7 @@ export const UNKNOWN_TYPE_SCALAR = decorateType(
 export function pathToArray(
 	infoPath: GraphQLResolveInfo['path']
 ): Array<string | number> {
-	const flattened = [];
+	const flattened: (string | number)[] = [];
 	let curr: GraphQLResolveInfo['path'] | undefined = infoPath;
 	while (curr) {
 		flattened.push(curr.key);

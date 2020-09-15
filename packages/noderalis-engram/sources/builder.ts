@@ -709,7 +709,7 @@ export class SchemaBuilder {
 					this.walkOutputType(obj.value);
 					break;
 				default:
-					casesHandled(obj);
+					casesHandled(obj as never);
 			}
 		}
 	}

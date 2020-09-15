@@ -362,7 +362,7 @@ export const connectionPlugin = (
 		//   type: User
 		// })
 		onInstall(b) {
-			let dynamicConfig = [];
+			let dynamicConfig: string[] = [];
 
 			const {
 				additionalArgs = {},

@@ -238,7 +238,7 @@ export class SDLConverter {
 			this.usedImports.add(`${type.toString().toLowerCase()}Arg`);
 			str += `${type.toString().toLowerCase()}Arg(`;
 		}
-		const metaToAdd = [];
+		const metaToAdd: unknown[] = [];
 		if (isArg) {
 			metaToAdd.push(`type: ${type.name}`);
 		}
