@@ -1,9 +1,9 @@
 {
-  "name": "Noderalis",
-  "description": "A Node.js application framework.",
-  "version": "{{version}}",
-  "license": "MIT",
-  "bin": {
-    "noderalis": "./bin/noderalis.js"
-  }
+	"name": "Nodalis",
+	"description": "A Node.js application framework.",
+	"version": "{{version}}",
+	"license": "MIT",
+	"bin": {
+		"nodalis": "./bin/nodalis.js"
+	}
 }

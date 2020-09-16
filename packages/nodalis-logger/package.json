@@ -1,0 +1,56 @@
+{
+	"name": "@nodalis/logger",
+	"description": "The Nodalis logger.",
+	"version": "0.1.0-alpha.1",
+	"license": "MIT",
+	"author": {
+		"name": "Grim",
+		"email": "silencegrim@gmail.com",
+		"url": "https://github.com/TheGrimSilence"
+	},
+	"scripts": {
+		"build": "run build:compile \"$(pwd)\"",
+		"prepack": "run build:compile \"$(pwd)\"",
+		"postpack": "rm -rf lib"
+	},
+	"main": "./sources/index.ts",
+	"publishConfig": {
+		"main": "./lib/index.js",
+		"typings": "./lib/index.d.ts"
+	},
+	"files": [
+		"lib"
+	],
+	"engines": {
+		"node": ">=14"
+	},
+	"dependencies": {
+		"@nodalis/core": "workspace:packages/nodalis-core",
+		"center-align": "^1.0.1",
+		"chalk": "^4.1.0",
+		"winston": "^3.3.3"
+	},
+	"devDependencies": {
+		"@types/center-align": "^1"
+	},
+	"foo": {
+		"files": [
+			"lib"
+		]
+	},
+	"": {
+		"files": [
+			"lib"
+		]
+	},
+	"{}": {
+		"files": [
+			"lib"
+		]
+	},
+	"this": {
+		"files": [
+			"lib"
+		]
+	}
+}

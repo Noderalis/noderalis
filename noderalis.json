@@ -1,4 +1,4 @@
 {
-  "exclude": ["@noderalis/builder"],
-  "display": "verbose"
+	"exclude": ["@nodalis/builder"],
+	"display": "verbose"
 }
